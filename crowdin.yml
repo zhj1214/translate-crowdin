@@ -1,0 +1,23 @@
+# Crowdin 项目配置文件
+project_id_env: CROWDIN_PROJECT_ID
+api_token_env: CROWDIN_PERSONAL_TOKEN
+base_path: "."
+preserve_hierarchy: true
+
+files:
+  # 常规翻译文件
+  - source: /locales/zh_HK/*.ts
+    translation: /locales/%three_letters_code%/%original_file_name%
+    multilingual: 1
+
+  # Figma 文案特殊处理
+  - source: /locales/zh_HK/figma.json
+    translation: /locales/%three_letters_code%/figma.json
+    multilingual: 1
+    update_option: update_as_unapproved
+    
+# 设置 Crowdin 分支支持
+branch: "main"
+
+bundles:
+  - 2
